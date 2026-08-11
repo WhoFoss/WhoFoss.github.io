@@ -49,19 +49,24 @@ header {
     padding: 60px 20px;
 }
 
+/* ===== BANNER REDONDO (FOTO DE PERFIL) ===== */
 .banner {
-    width: 100%;
-    max-width: 850px;
-    border-radius: 15px;
-    border: 1px solid #222;
-    margin-bottom: 35px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 180px;           /* Tamanho da foto */
+    height: 180px;          /* Mesmo tamanho pra ficar redondo */
+    border-radius: 50%;     /* Torna a imagem circular */
+    object-fit: cover;      /* Corta a imagem para caber no círculo */
+    border: 3px solid #333; /* Borda ao redor */
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(255,255,255,0.03);
 }
 
 .banner:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 40px rgba(255,255,255,0.05);
+    transform: scale(1.05);
+    border-color: #666;
+    box-shadow: 0 0 50px rgba(255,255,255,0.08);
 }
+/* ======================================== */
 
 h1 {
     font-size: 56px;
@@ -278,7 +283,8 @@ footer a:hover {
     }
     
     .banner {
-        border-radius: 10px;
+        width: 140px;
+        height: 140px;
     }
 }
 
@@ -295,6 +301,11 @@ footer a:hover {
         font-size: 12px;
         padding: 6px 12px;
     }
+    
+    .banner {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 </style>
@@ -306,7 +317,7 @@ footer a:hover {
 <header>
 
 <img src="assets/img/logo.png" 
-     alt="Banner WhoFoss - Desenvolvedor Open Source" 
+     alt="Foto de perfil - WhoFoss" 
      class="banner">
 
 <h1>WhoFoss</h1>
