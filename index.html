@@ -21,38 +21,43 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 header {
     text-align: center;
-    padding: 100px 20px 70px;
+    padding: 60px 20px;
 }
 
-.logo {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 25px;
+
+.banner {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 15px;
     border: 1px solid #222;
+    margin-bottom: 35px;
 }
+
 
 h1 {
     font-size: 56px;
-    color: #ffffff;
+    color: white;
     letter-spacing: 2px;
-    margin: 0;
+    margin: 10px 0;
 }
 
+
 .subtitle {
-    margin-top: 15px;
+    color: #888;
     font-size: 20px;
-    color: #777;
+    line-height: 1.7;
 }
+
 
 .container {
     max-width: 850px;
     margin: auto;
     padding: 20px;
 }
+
 
 .section {
     background: #050505;
@@ -62,38 +67,33 @@ h1 {
     margin-bottom: 25px;
 }
 
+
 h2 {
-    color: #ffffff;
+    color: white;
     font-size: 26px;
-    margin-top: 0;
 }
 
+
 p {
-    line-height: 1.7;
     color: #999;
+    line-height: 1.7;
 }
+
 
 .card {
     background: #000;
     border: 1px solid #1c1c1c;
-    padding: 20px;
     border-radius: 12px;
+    padding: 20px;
     margin-top: 15px;
-    transition: 0.3s;
 }
 
-.card:hover {
-    border-color: #444;
-    transform: translateY(-3px);
-}
 
 .card b {
     color: white;
     font-size: 18px;
 }
 
-
-/* Organização dos botões */
 
 .buttons {
     display: grid;
@@ -107,34 +107,44 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 14px;
+
     background: #111;
     color: white;
+
     border: 1px solid #333;
     border-radius: 10px;
+
     text-decoration: none;
-    transition: 0.3s;
-    text-align: center;
+    transition: .3s;
 }
 
 
 .button:hover {
     background: #222;
     border-color: #666;
-    transform: translateY(-3px);
 }
 
 
-@media (max-width: 600px) {
+.skill {
+    display: inline-block;
+    background: #111;
+    color: white;
 
-    .buttons {
-        grid-template-columns: 1fr;
-    }
+    border: 1px solid #333;
 
-    h1 {
-        font-size: 42px;
-    }
+    padding: 8px 15px;
+    margin: 5px;
 
+    border-radius: 8px;
+}
+
+
+.warning {
+    color: #777;
+    text-align: center;
+    font-style: italic;
 }
 
 
@@ -143,6 +153,20 @@ footer {
     padding: 40px;
     color: #555;
 }
+
+
+@media(max-width:600px){
+
+.buttons {
+    grid-template-columns: 1fr;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+}
+
 
 </style>
 
@@ -154,13 +178,28 @@ footer {
 
 <header>
 
-<img src="assets/logo.png" class="logo" alt="WhoFoss">
+
+<img src="assets/img/b8ea712858075da7137363ac40b3aad3.jpg" class="banner">
+
 
 <h1>WhoFoss</h1>
 
+
 <p class="subtitle">
-Projetos de código aberto e desenvolvimento Android
+
+Desenvolvedor interessado em código aberto, Android e sistemas Linux.
+
+<br><br>
+
+No meu tempo livre, mantenho o LineageOS com MicroG integrado
+para o Redmi Note 13 4G.
+
+<br><br>
+
+<b>Aqui você encontrará meus scripts e dotfiles.</b>
+
 </p>
+
 
 </header>
 
@@ -172,89 +211,138 @@ Projetos de código aberto e desenvolvimento Android
 
 <div class="section">
 
-<h2>Sobre</h2>
+<h2>Sobre mim</h2>
 
 <p>
-O WhoFoss é um projeto focado em desenvolvimento open source,
-Android personalizado e ferramentas voltadas para liberdade de software.
+
+Sou um desenvolvedor explorando diferentes áreas da tecnologia,
+com foco em software livre, Android e automação.
+
+</p>
+
+<p>
+
+Meus projetos envolvem desenvolvimento de scripts,
+personalização de sistemas e manutenção de ROMs Android.
+
+</p>
+
+
+<p class="warning">
+Para fins educacionais apenas.
 </p>
 
 </div>
 
-
-
-<div class="section">
-
-<h2>Projetos</h2>
-
-
-<div class="card">
-
-<b>Builds Android</b>
-
-<p>
-Sistemas personalizados baseados em Android com foco em estabilidade,
-privacidade e desempenho.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<b>Ferramentas</b>
-
-<p>
-Scripts e utilitários para usuários avançados e desenvolvedores Android.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<b>Documentação</b>
-
-<p>
-Guias técnicos sobre desenvolvimento, compilação e personalização Android.
-</p>
-
-</div>
-
-
-</div>
 
 
 
 
 <div class="section">
 
-<h2>Scripts</h2>
+<h2>Minhas habilidades</h2>
+
+
+<span class="skill">Bash</span>
+<span class="skill">Python</span>
+<span class="skill">C</span>
+<span class="skill">Rust</span>
+<span class="skill">Linux</span>
+<span class="skill">Android</span>
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">Brainfuck</span>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+<h2>Dispositivo e ROM</h2>
+
+
+<div class="card">
+
+<b>LineageOS</b>
 
 <p>
-Acesso aos scripts e ferramentas desenvolvidos pelo projeto.
+Manutenção de builds personalizadas do LineageOS.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<b>MicroG</b>
+
+<p>
+Integração de serviços livres como alternativa ao Google Play Services.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<b>Redmi Note 13 4G</b>
+
+<p>
+Dispositivo utilizado para desenvolvimento e testes.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<b>KernelSU</b>
+
+<p>
+Exploração de gerenciamento root baseado em kernel.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+<h2>Meus scripts</h2>
+
+<p>
+Scripts, configurações e ferramentas desenvolvidas por mim.
 </p>
 
 
 <div class="buttons">
 
 
-<a class="button" href="https://github.com/WhoFoss/LOSMG" target="_blank">
+<a class="button" href="https://github.com/WhoFoss/LOSMG">
 LOSMG
 </a>
 
 
-<a class="button" href="https://github.com/WhoFoss/Code-Snippets" target="_blank">
+<a class="button" href="https://github.com/WhoFoss/Code-Snippets">
 Code Snippets
 </a>
 
 
-<a class="button" href="https://github.com/WhoFoss/preset" target="_blank">
+<a class="button" href="https://github.com/WhoFoss/preset">
 Preset
 </a>
 
 
-<a class="button" href="https://github.com/WhoFoss/termux-preset" target="_blank">
+<a class="button" href="https://github.com/WhoFoss/termux-preset">
 Termux Preset
 </a>
 
@@ -266,20 +354,58 @@ Termux Preset
 
 
 
+
 <div class="section">
 
-<h2>Links</h2>
+<h2>Sistemas utilizados</h2>
 
 
 <div class="buttons">
 
 
-<a class="button" href="https://github.com/WhoFoss" target="_blank">
+<a class="button" href="https://biglinux.com.br/">
+BigLinux
+</a>
+
+
+<a class="button" href="https://tails.boum.org/">
+Tails
+</a>
+
+
+<a class="button" href="https://www.android.com/">
+Android
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+<h2>Contato</h2>
+
+
+<div class="buttons">
+
+
+<a class="button" href="https://github.com/WhoFoss">
 GitHub
 </a>
 
 
-<a class="button" href="https://t.me/WhoFossHub" target="_blank">
+<a class="button" href="https://t.me/whofoss">
+Telegram
+</a>
+
+
+<a class="button" href="https://t.me/WhoFossHub">
 Telegram Hub
 </a>
 
@@ -297,7 +423,7 @@ Telegram Hub
 
 <footer>
 
-© 2026 WhoFoss
+© 2026 WhoFoss · Desenvolvedor Open Source
 
 </footer>
 
