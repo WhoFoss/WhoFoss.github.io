@@ -6,7 +6,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Meta tags para compartilhamento -->
+<meta property="og:title" content="WhoFoss">
+<meta property="og:description" content="Desenvolvedor Open Source - LineageOS, Android e Linux">
+<meta property="og:image" content="assets/img/b8ea712858075da7137363ac40b3aad3.jpg">
+<meta property="og:url" content="https://whofoss.github.io">
+<meta name="description" content="Desenvolvedor interessado em código aberto, Android e sistemas Linux">
+
 <title>WhoFoss</title>
+
+<!-- Font Awesome para ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -18,15 +28,26 @@ body {
     margin: 0;
     background: #000;
     color: #d0d0d0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
+/* Efeito de brilho no fundo (opcional) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
 
 header {
     text-align: center;
     padding: 60px 20px;
 }
-
 
 .banner {
     width: 100%;
@@ -34,16 +55,21 @@ header {
     border-radius: 15px;
     border: 1px solid #222;
     margin-bottom: 35px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.banner:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 40px rgba(255,255,255,0.05);
+}
 
 h1 {
     font-size: 56px;
     color: white;
     letter-spacing: 2px;
     margin: 10px 0;
+    text-shadow: 0 0 30px rgba(255,255,255,0.05);
 }
-
 
 .subtitle {
     color: #888;
@@ -51,13 +77,11 @@ h1 {
     line-height: 1.7;
 }
 
-
 .container {
     max-width: 850px;
     margin: auto;
     padding: 20px;
 }
-
 
 .section {
     background: #050505;
@@ -65,20 +89,30 @@ h1 {
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 25px;
+    transition: border-color 0.3s ease;
 }
 
+.section:hover {
+    border-color: #333;
+}
 
 h2 {
     color: white;
     font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+h2 i {
+    color: #666;
+    font-size: 22px;
+}
 
 p {
     color: #999;
     line-height: 1.7;
 }
-
 
 .card {
     background: #000;
@@ -86,14 +120,26 @@ p {
     border-radius: 12px;
     padding: 20px;
     margin-top: 15px;
+    transition: border-color 0.3s ease, transform 0.2s ease;
 }
 
+.card:hover {
+    border-color: #444;
+    transform: translateX(5px);
+}
 
 .card b {
     color: white;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+.card b i {
+    color: #666;
+    font-size: 16px;
+}
 
 .buttons {
     display: grid;
@@ -102,88 +148,168 @@ p {
     margin-top: 20px;
 }
 
+/* Grid específico para sistemas utilizados */
+.section:nth-of-type(5) .buttons {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Grid específico para contato */
+.section:nth-of-type(6) .buttons {
+    grid-template-columns: repeat(3, 1fr);
+}
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    gap: 8px;
     padding: 14px;
-
     background: #111;
     color: white;
-
     border: 1px solid #333;
     border-radius: 10px;
-
     text-decoration: none;
-    transition: .3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
+.button i {
+    font-size: 18px;
+}
 
 .button:hover {
     background: #222;
     border-color: #666;
+    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+    transform: translateY(-2px);
 }
 
+.button:active {
+    transform: translateY(0px);
+}
 
 .skill {
     display: inline-block;
     background: #111;
     color: white;
-
     border: 1px solid #333;
-
     padding: 8px 15px;
     margin: 5px;
-
     border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
+.skill:hover {
+    background: #1a1a1a;
+    border-color: #666;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.03);
+}
 
 .warning {
     color: #777;
     text-align: center;
     font-style: italic;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #111;
 }
-
 
 footer {
     text-align: center;
     padding: 40px;
     color: #555;
+    font-size: 14px;
 }
 
-
-@media(max-width:600px){
-
-.buttons {
-    grid-template-columns: 1fr;
+footer a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-h1 {
-    font-size: 42px;
+footer a:hover {
+    color: #999;
 }
 
+/* Animações suaves de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+.section {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.section:nth-child(2) { animation-delay: 0.1s; }
+.section:nth-child(3) { animation-delay: 0.2s; }
+.section:nth-child(4) { animation-delay: 0.3s; }
+.section:nth-child(5) { animation-delay: 0.4s; }
+.section:nth-child(6) { animation-delay: 0.5s; }
+
+/* Responsividade */
+@media(max-width: 768px) {
+    .section:nth-of-type(5) .buttons,
+    .section:nth-of-type(6) .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .buttons {
+        grid-template-columns: 1fr !important;
+    }
+    
+    h1 {
+        font-size: 42px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .banner {
+        border-radius: 10px;
+    }
+}
+
+@media(max-width: 400px) {
+    header {
+        padding: 30px 15px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+    
+    .skill {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header>
 
-
-<img src="assets/logo.png" class="banner">
-
+<img src="assets/img/b8ea712858075da7137363ac40b3aad3.jpg" 
+     alt="Banner WhoFoss - Desenvolvedor Open Source" 
+     class="banner">
 
 <h1>WhoFoss</h1>
-
 
 <p class="subtitle">
 
@@ -191,8 +317,9 @@ Desenvolvedor interessado em código aberto, Android e sistemas Linux.
 
 <br><br>
 
-No meu tempo livre, mantenho o LineageOS com MicroG integrado
-para o Redmi Note 13 4G.
+No meu tempo livre, mantenho o LineageOS com 
+<a href="https://microg.org/" target="_blank" style="color:#888; text-decoration:none; border-bottom: 1px dashed #444;">MicroG</a> 
+integrado para o Redmi Note 13 4G.
 
 <br><br>
 
@@ -200,18 +327,14 @@ para o Redmi Note 13 4G.
 
 </p>
 
-
 </header>
-
-
 
 <div class="container">
 
-
-
+<!-- Sobre mim -->
 <div class="section">
 
-<h2>Sobre mim</h2>
+<h2><i class="fas fa-user"></i> Sobre mim</h2>
 
 <p>
 
@@ -227,47 +350,37 @@ personalização de sistemas e manutenção de ROMs Android.
 
 </p>
 
-
 <p class="warning">
-Para fins educacionais apenas.
+<i class="fas fa-info-circle"></i> Para fins educacionais apenas.
 </p>
 
 </div>
 
-
-
-
-
+<!-- Habilidades -->
 <div class="section">
 
-<h2>Minhas habilidades</h2>
+<h2><i class="fas fa-code"></i> Minhas habilidades</h2>
 
-
-<span class="skill">Bash</span>
-<span class="skill">Python</span>
-<span class="skill">C</span>
-<span class="skill">Rust</span>
-<span class="skill">Linux</span>
-<span class="skill">Android</span>
-<span class="skill">HTML</span>
-<span class="skill">CSS</span>
-<span class="skill">Brainfuck</span>
-
+<span class="skill"><i class="fas fa-terminal" style="margin-right:5px;"></i>Bash</span>
+<span class="skill"><i class="fab fa-python" style="margin-right:5px;"></i>Python</span>
+<span class="skill"><i class="fas fa-microchip" style="margin-right:5px;"></i>C</span>
+<span class="skill"><i class="fas fa-cog" style="margin-right:5px;"></i>Rust</span>
+<span class="skill"><i class="fab fa-linux" style="margin-right:5px;"></i>Linux</span>
+<span class="skill"><i class="fab fa-android" style="margin-right:5px;"></i>Android</span>
+<span class="skill"><i class="fab fa-html5" style="margin-right:5px;"></i>HTML</span>
+<span class="skill"><i class="fab fa-css3-alt" style="margin-right:5px;"></i>CSS</span>
+<span class="skill"><i class="fas fa-brain" style="margin-right:5px;"></i>Brainfuck</span>
 
 </div>
 
-
-
-
-
+<!-- Dispositivo e ROM -->
 <div class="section">
 
-<h2>Dispositivo e ROM</h2>
-
+<h2><i class="fas fa-mobile-alt"></i> Dispositivo e ROM</h2>
 
 <div class="card">
 
-<b>LineageOS</b>
+<b><i class="fab fa-android"></i> LineageOS</b>
 
 <p>
 Manutenção de builds personalizadas do LineageOS.
@@ -275,21 +388,21 @@ Manutenção de builds personalizadas do LineageOS.
 
 </div>
 
-
 <div class="card">
 
-<b>MicroG</b>
+<b><i class="fas fa-shield-alt"></i> MicroG</b>
 
 <p>
 Integração de serviços livres como alternativa ao Google Play Services.
+<br>
+<small style="color:#666;">→ <a href="https://microg.org/" target="_blank" style="color:#666; text-decoration:none;">microg.org</a></small>
 </p>
 
 </div>
 
-
 <div class="card">
 
-<b>Redmi Note 13 4G</b>
+<b><i class="fas fa-phone"></i> Redmi Note 13 4G</b>
 
 <p>
 Dispositivo utilizado para desenvolvimento e testes.
@@ -297,10 +410,9 @@ Dispositivo utilizado para desenvolvimento e testes.
 
 </div>
 
-
 <div class="card">
 
-<b>KernelSU</b>
+<b><i class="fas fa-lock"></i> KernelSU</b>
 
 <p>
 Exploração de gerenciamento root baseado em kernel.
@@ -308,126 +420,96 @@ Exploração de gerenciamento root baseado em kernel.
 
 </div>
 
-
 </div>
 
-
-
-
-
+<!-- Scripts -->
 <div class="section">
 
-<h2>Meus scripts</h2>
+<h2><i class="fas fa-folder-open"></i> Meus scripts</h2>
 
 <p>
 Scripts, configurações e ferramentas desenvolvidas por mim.
 </p>
 
-
 <div class="buttons">
-
 
 <a class="button" href="https://github.com/WhoFoss/LOSMG">
-LOSMG
+<i class="fab fa-github"></i> LOSMG
 </a>
-
 
 <a class="button" href="https://github.com/WhoFoss/Code-Snippets">
-Code Snippets
+<i class="fas fa-code"></i> Code Snippets
 </a>
-
 
 <a class="button" href="https://github.com/WhoFoss/preset">
-Preset
+<i class="fas fa-sliders-h"></i> Preset
 </a>
-
 
 <a class="button" href="https://github.com/WhoFoss/termux-preset">
-Termux Preset
+<i class="fas fa-terminal"></i> Termux Preset
 </a>
 
-
 </div>
 
 </div>
 
-
-
-
-
+<!-- Sistemas utilizados -->
 <div class="section">
 
-<h2>Sistemas utilizados</h2>
-
+<h2><i class="fas fa-desktop"></i> Sistemas utilizados</h2>
 
 <div class="buttons">
 
-
-<a class="button" href="https://biglinux.com.br/">
-BigLinux
+<a class="button" href="https://biglinux.com.br/" target="_blank">
+<i class="fas fa-linux"></i> BigLinux
 </a>
 
-
-<a class="button" href="https://tails.boum.org/">
-Tails
+<a class="button" href="https://tails.boum.org/" target="_blank">
+<i class="fas fa-shield-virus"></i> Tails
 </a>
 
-
-<a class="button" href="https://www.android.com/">
-Android
+<a class="button" href="https://www.android.com/" target="_blank">
+<i class="fab fa-android"></i> Android
 </a>
-
 
 </div>
 
-
 </div>
 
-
-
-
-
+<!-- Contato -->
 <div class="section">
 
-<h2>Contato</h2>
-
+<h2><i class="fas fa-envelope"></i> Contato</h2>
 
 <div class="buttons">
 
-
-<a class="button" href="https://github.com/WhoFoss">
-GitHub
+<a class="button" href="https://github.com/WhoFoss" target="_blank">
+<i class="fab fa-github"></i> GitHub
 </a>
 
-
-<a class="button" href="https://t.me/whofoss">
-Telegram
+<a class="button" href="https://t.me/whofoss" target="_blank">
+<i class="fab fa-telegram"></i> Telegram
 </a>
 
-
-<a class="button" href="https://t.me/WhoFossHub">
-Telegram Hub
+<a class="button" href="https://t.me/WhoFossHub" target="_blank">
+<i class="fab fa-telegram"></i> Telegram Hub
 </a>
-
 
 </div>
 
-
 </div>
 
-
-
 </div>
-
-
 
 <footer>
 
 © 2026 WhoFoss · Desenvolvedor Open Source
+<br>
+<small style="color:#444;">
+<i class="fas fa-code"></i> Feito com <i class="fas fa-heart" style="color:#333;"></i> e código aberto
+</small>
 
 </footer>
-
-
 
 </body>
 
